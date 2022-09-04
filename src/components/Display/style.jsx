@@ -16,7 +16,8 @@ export const Message = styled.p`
   letter-spacing: -0.1rem;
   height: 2rem;
   position: absolute;
-  top: 174px;
+  top: 17.4rem;
+  color: ${(props) => props.color};
 `
 export const ButtonNewGame = styled.button`
   width: 13rem;
@@ -27,7 +28,7 @@ export const ButtonNewGame = styled.button`
   justify-content: center;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 192px;
+  bottom: 45rem;
 
   background: linear-gradient(180deg, #434854 0%, #9e9e9e 100%);
   border: none;
@@ -45,6 +46,5 @@ export const DisplayBox = styled.div`
   align-items: center;
 
   position: relative;
-  height: 100%;
   width: 100%;
 `

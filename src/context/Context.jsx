@@ -11,6 +11,8 @@ export const ContextProvider = ({ children }) => {
   const [display, setDisplay] = useState()
   const [message, setMessage] = useState('')
   const [endGame, setEndGame] = useState(false)
+  const [colorMessage, setColorMessage] = useState()
+  const [colorDisplay, setColorDisplay] = useState()
   const [numbersMap] = useState(numbersJson)
 
   useEffect(() => {
@@ -30,29 +32,41 @@ export const ContextProvider = ({ children }) => {
     setMessage('')
     handleNewGame()
     setDisplay('000')
+    setColorDisplay('')
+    setColorMessage('')
   }
 
   function handlePlayerNumber() {
     setPlayerNumber('')
     const playerNumberIsInt = Number.isInteger(parseFloat(playerNumber))
     if (isNaN(playerNumber) || !playerNumberIsInt) {
-      setMessage('Digite apenas números inteiros.')
-      setDisplay('err')
+      setMessage('ERRO')
+      setDisplay('502')
+      setColorMessage('var(--red)')
+      setColorDisplay('var(--red)')
+      setEndGame(true)
     } else {
       if (parseInt(playerNumber) > apiNumber) {
-        debugger
         setMessage('É menor')
         setDisplay(playerNumber)
+        setColorMessage('var(--orange)')
+        setColorDisplay('var(--dark)')
       } else if (parseInt(playerNumber) < apiNumber) {
         setMessage('É maior')
         setDisplay(playerNumber)
+        setColorMessage('var(--orange)')
+        setColorDisplay('var(--dark)')
       } else if (parseInt(playerNumber) === apiNumber) {
         setMessage('Você acertou!')
         setDisplay(playerNumber)
+        setColorMessage('var(--green)')
+        setColorDisplay('var(--green)')
         setEndGame(true)
       } else {
-        setMessage('Ooops, isto não deveria ter acontecido!')
+        setMessage('ERRO')
         setDisplay('err')
+        setColorMessage('var(--red)')
+        setColorDisplay('var(--red)')
       }
     }
   }
@@ -69,6 +83,8 @@ export const ContextProvider = ({ children }) => {
         handleSetNewGame,
         endGame,
         numbersMap,
+        colorMessage,
+        colorDisplay,
       }}
     >
       {children}

@@ -3,28 +3,29 @@ import { Context } from '../../context/Context'
 import { useContext } from 'react'
 import { ArrowClockwise } from 'phosphor-react'
 import SegmentsDisplay from '../SegmentsDisplay'
+import InitialState from '../SegmentsDisplay/InitialState'
 
 function Display() {
   const context = useContext(Context)
-  const { display, handleSetNewGame, numbersMap } = context
+  const { display, handleSetNewGame, numbersMap, colorMessage, message } =
+    context
   const arrayDisplay = display && Array.from(display)
+  console.log(colorMessage)
 
   return (
     <Content>
-      <Message>{context.message}</Message>
-
+      <Message color={colorMessage}>{message}</Message>
       <DisplayBox>
-        {numbersMap.map(
-          (nMap, idx) =>
-            arrayDisplay &&
-            arrayDisplay.map((nDisp) => {
-              if (nDisp * 1 === Object.keys(nMap) * 1) {
-                return <SegmentsDisplay props={Object.values(nMap)} key={idx} />
-              }
+        {!arrayDisplay && <InitialState />}
+        {arrayDisplay &&
+          arrayDisplay.map((numDisp) =>
+            numbersMap.map((numMap) => {
+              if (numDisp * 1 === Object.keys(numMap) * 1) {
+                return <SegmentsDisplay props={Object.values(numMap)} />
+              } else return false
             })
-        )}
+          )}
       </DisplayBox>
-
       {context.endGame && (
         <ButtonNewGame onClick={() => handleSetNewGame()}>
           <ArrowClockwise
