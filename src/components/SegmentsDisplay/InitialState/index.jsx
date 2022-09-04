@@ -12,13 +12,13 @@ import {
 function SegmentsDisplay() {
   return (
     <Display className="Display">
-      <SegmentA color={'#DDDDDD'}></SegmentA>
-      <SegmentB color={'#DDDDDD'}></SegmentB>
-      <SegmentC color={'#DDDDDD'}></SegmentC>
-      <SegmentD color={'#DDDDDD'}></SegmentD>
-      <SegmentE color={'#DDDDDD'}></SegmentE>
-      <SegmentF color={'#DDDDDD'}></SegmentF>
-      <SegmentG color={'#DDDDDD'}></SegmentG>
+      <SegmentA color={'var(--disabled)'}></SegmentA>
+      <SegmentB color={'var(--disabled)'}></SegmentB>
+      <SegmentC color={'var(--disabled)'}></SegmentC>
+      <SegmentD color={'var(--disabled)'}></SegmentD>
+      <SegmentE color={'var(--disabled)'}></SegmentE>
+      <SegmentF color={'var(--disabled)'}></SegmentF>
+      <SegmentG color={'var(--disabled)'}></SegmentG>
     </Display>
   )
 }

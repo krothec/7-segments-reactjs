@@ -10,7 +10,6 @@ function Display() {
   const { display, handleSetNewGame, numbersMap, colorMessage, message } =
     context
   const arrayDisplay = display && Array.from(display)
-  console.log(colorMessage)
 
   return (
     <Content>

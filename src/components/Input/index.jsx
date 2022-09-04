@@ -12,6 +12,11 @@ function Input() {
         placeholder="Digite o palpite"
         value={context.playerNumber}
         disabled={context.endGame}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            context.handlePlayerNumber()
+          }
+        }}
         onChange={(e) => context.setPlayerNumber(e.target.value)}
       />
       <SendButton

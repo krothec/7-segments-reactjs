@@ -31,7 +31,7 @@ export const ContextProvider = ({ children }) => {
     setEndGame(false)
     setMessage('')
     handleNewGame()
-    setDisplay('000')
+    setDisplay()
     setColorDisplay('')
     setColorMessage('')
   }
