@@ -1,6 +1,6 @@
 import { InputText, SendButton, InLine } from './style'
 import { Context } from '../../context/Context'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 
 function Input() {
   const context = useContext(Context)

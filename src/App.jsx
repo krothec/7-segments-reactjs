@@ -1,14 +1,16 @@
 import { GlobalStyle } from './styles/global'
-import { Container, Line, HeaderBox } from './style'
+import { Container, Line, HeaderBox, Canvas } from './style'
 import Input from './components/Input'
 import Display from './components/Display'
 import { ContextProvider } from './context/Context'
+import HelpButton from './components/Help'
 
 function App() {
   return (
-    <div>
+    <Canvas>
       <ContextProvider>
         <Container>
+          <HelpButton />
           <HeaderBox>
             <h1>QUAL É O NÚMERO?</h1>
             <Line />
@@ -20,7 +22,7 @@ function App() {
         {/* Providers */}
         <GlobalStyle />
       </ContextProvider>
-    </div>
+    </Canvas>
   )
 }
 

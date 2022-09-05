@@ -45,30 +45,35 @@ export const ContextProvider = ({ children }) => {
       setColorMessage('var(--red)')
       setColorDisplay('var(--red)')
       setEndGame(true)
-    } else {
-      if (parseInt(playerNumber) > apiNumber) {
-        setMessage('É menor')
-        setDisplay(playerNumber)
-        setColorMessage('var(--orange)')
-        setColorDisplay('var(--dark)')
-      } else if (parseInt(playerNumber) < apiNumber) {
-        setMessage('É maior')
-        setDisplay(playerNumber)
-        setColorMessage('var(--orange)')
-        setColorDisplay('var(--dark)')
-      } else if (parseInt(playerNumber) === apiNumber) {
-        setMessage('Você acertou!')
-        setDisplay(playerNumber)
-        setColorMessage('var(--green)')
-        setColorDisplay('var(--green)')
-        setEndGame(true)
-      } else {
-        setMessage('ERRO')
-        setDisplay('err')
-        setColorMessage('var(--red)')
-        setColorDisplay('var(--red)')
-      }
+      return
     }
+    if (parseInt(playerNumber) > apiNumber) {
+      setMessage('É menor')
+      setDisplay(playerNumber)
+      setColorMessage('var(--orange)')
+      setColorDisplay('var(--dark)')
+      return
+    }
+    if (parseInt(playerNumber) < apiNumber) {
+      setMessage('É maior')
+      setDisplay(playerNumber)
+      setColorMessage('var(--orange)')
+      setColorDisplay('var(--dark)')
+      return
+    }
+    if (parseInt(playerNumber) === apiNumber) {
+      setMessage('Você acertou!')
+      setDisplay(playerNumber)
+      setColorMessage('var(--green)')
+      setColorDisplay('var(--green)')
+      setEndGame(true)
+      return
+    }
+
+    setMessage('ERRO')
+    setDisplay('err')
+    setColorMessage('var(--red)')
+    setColorDisplay('var(--red)')
   }
 
   return (

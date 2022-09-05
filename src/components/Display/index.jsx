@@ -21,7 +21,7 @@ function Display() {
             numbersMap.map((numMap) => {
               if (numDisp * 1 === Object.keys(numMap) * 1) {
                 return <SegmentsDisplay props={Object.values(numMap)} />
-              } else return false
+              } else return
             })
           )}
       </DisplayBox>

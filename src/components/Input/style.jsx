@@ -34,6 +34,6 @@ export const SendButton = styled.button`
     background: var(--disabled);
   }
 `
-export const InLine = styled.div`
+export const InLine = styled.section`
   display: flex;
 `

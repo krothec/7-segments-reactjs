@@ -28,7 +28,7 @@ export const ButtonNewGame = styled.button`
   justify-content: center;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 45rem;
+  top: 40rem;
 
   background: linear-gradient(180deg, #434854 0%, #9e9e9e 100%);
   border: none;
